@@ -15,32 +15,41 @@ public class FourDice {
 
 		Scanner scan = new Scanner(System.in);
 		String userName;
-
 		System.out.println("Please enter your name.");
 		userName = scan.nextLine();
 
+		String inputted = "yes";
 
-		int die1 = (int)(Math.random()*6)+1;
-		int die2 = (int)(Math.random()*6)+1;
+		while (inputted.equalsIgnoreCase("yes")) {
 
-		int userScore = die1 + die2;
+			int die1 = (int)(Math.random()*6)+1;
+			int die2 = (int)(Math.random()*6)+1;
 
-		int die3 = (int)(Math.random()*6)+1;
-		int die4 = (int)(Math.random()*6)+1;
+			int userScore = die1 + die2;
 
-		int cpuScore = die3 + die4;
+			int die3 = (int)(Math.random()*6)+1;
+			int die4 = (int)(Math.random()*6)+1;
+
+			int cpuScore = die3 + die4;
 
 
-		if (userScore > cpuScore){
-			System.out.println("Congratulations " + userName + " you win!!!");
-			System.out.println("The score was " + userScore + " to " + cpuScore);
-		}
-		else if (cpuScore > userScore){
-			System.out.println("Better luck next time, the computer wins");
-			System.out.println("The score was " + cpuScore + " to " + userScore);
-		}
-		else {
-			System.out.println("It's a tie");
+			if (userScore > cpuScore){
+				System.out.println("Congratulations " + userName + " you win!!!");
+				System.out.println("The score was " + userScore + " to " + cpuScore);
+			}
+			else if (cpuScore > userScore){
+				System.out.println("Better luck next time, the computer wins");
+				System.out.println("The score was " + cpuScore + " to " + userScore);
+			}
+			else {
+				System.out.println("It's a tie");
+
+			}
+			
+			System.out.println("Do you want to continue?");
+			inputted = scan.nextLine();
+			
+			
 		}
 
 
